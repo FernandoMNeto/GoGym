@@ -1,116 +1,232 @@
 {
-    "info": {
-      "name": "GoGym User",
-      "_postman_id": "12345-67890-abcdef",
-      "description": "Postman collection to test the User API endpoints",
-      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  "info": {
+    "name": "GoGym API",
+    "_postman_id": "12345-67890-abcdef",
+    "description": "Postman collection to test the User and Action API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User API",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/user",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user"]
+            }
+          }
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/user/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/user",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user"]
+            }
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"updateduser\",\n  \"password\": \"newpassword123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/user/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["user", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
-    "item": [
-      {
-        "name": "Get All Users",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "http://localhost:8080/user",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "8080",
-            "path": ["user"]
-          }
-        }
-      },
-      {
-        "name": "Get User by ID",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "http://localhost:8080/user/:id",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "8080",
-            "path": ["user", ":id"],
-            "variable": [
-              {
-                "key": "id",
-                "value": "1"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "name": "Create User",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
+    {
+      "name": "Action API",
+      "item": [
+        {
+          "name": "Get All Actions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/action",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["action"]
             }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"password123\"\n}"
-          },
-          "url": {
-            "raw": "http://localhost:8080/user",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "8080",
-            "path": ["user"]
           }
-        }
-      },
-      {
-        "name": "Update User",
-        "request": {
-          "method": "PATCH",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
+        },
+        {
+          "name": "Get Action by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/action/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["action", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
             }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"username\": \"updateduser\",\n  \"password\": \"newpassword123\"\n}"
-          },
-          "url": {
-            "raw": "http://localhost:8080/user/:id",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "8080",
-            "path": ["user", ":id"],
-            "variable": [
+          }
+        },
+        {
+          "name": "Create Action",
+          "request": {
+            "method": "POST",
+            "header": [
               {
-                "key": "id",
-                "value": "1"
+                "key": "Content-Type",
+                "value": "application/json"
               }
-            ]
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sample Action\",\n  \"description\": \"This is a sample action.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/action",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["action"]
+            }
+          }
+        },
+        {
+          "name": "Update Action",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Action\",\n  \"description\": \"This is an updated action.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/action/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["action", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Action",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/action/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["action", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
           }
         }
-      },
-      {
-        "name": "Delete User",
-        "request": {
-          "method": "DELETE",
-          "header": [],
-          "url": {
-            "raw": "http://localhost:8080/user/:id",
-            "protocol": "http",
-            "host": ["localhost"],
-            "port": "8080",
-            "path": ["user", ":id"],
-            "variable": [
-              {
-                "key": "id",
-                "value": "1"
-              }
-            ]
-          }
-        }
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}
