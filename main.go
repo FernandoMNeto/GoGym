@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	config.Connect()
+	config.SetupDatabase()
+	
+	routes.HandleRequest(config.DB)
 
-	routes.HandleRequest()
 }

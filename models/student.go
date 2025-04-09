@@ -10,7 +10,7 @@ type Student struct {
 	gorm.Model
 	Name        string    `gorm:"not null"`
 	Password    string    `gorm:"unique"`
-	Address     Address   `gorm:"not null"`
+	Address     Address   `gorm:"not null"`	
 	Email       string    `gorm:"unique"`
 	Phone       string    `gorm:"unique"`
 	LastChekIn  time.Time `gorm:"unique;not null"`
